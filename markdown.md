@@ -26,7 +26,7 @@
 
 ### 2. Linux Command
 ***
-##### 1) File and Directory 관련
+#### 1) File and Directory 관련
 
 1. ls : `List imformation about file`
     > 1. ls -a : hidden file도 다 보여줌
@@ -50,19 +50,19 @@
 
 ### 3. 올바르게 코드를 작성하는 방법
 ***
-##### 1) Camel Case
+#### 1) Camel Case
     > 첫 단어의 첫 글자만 소문자로 하고, 다음 단어부터 첫 글자는 대문자로
         ex ) markDown, camelCase
 
 <br>
 
-##### 2) Pascal Case
+#### 2) Pascal Case
     > 첫 단어의 첫 글자부터 대문자
         ex ) MarkDown, PascalCase
     
 <br>
 
-##### 3) Snake Case
+#### 3) Snake Case
     > 단어 사이에 언더바( _ )로 나누는 방식
         ex ) mark_down, snake_case
     > python은 주로 이거 사용한답니다 ^__^
@@ -92,7 +92,7 @@
 
 ### 5. HTTP response status code
 ***
-##### 1) 성공 응답
+#### 1) 성공 응답
 
 1. 200 OK : `요청이 성공적으로 되었습니다. 성공의 의미는 HTTP 메소드에 따라 달라집니다.`
     > - GET : 리소스를 불러와서 메세지 바디에 전송되었습니다.
@@ -105,7 +105,7 @@
 
 <br>
 
-##### 2) 클라이언트 에러 응답
+#### 2) 클라이언트 에러 응답
 
 1. 400 Bad Request : `이 응답은 잘못된 문법으로 인하여 서버가 요청을 이해할 수 없음을 의미합니다.`
 
@@ -119,7 +119,7 @@ URL을 의미합니다. 이것은 API에서 종점은 적절하지만, 리소스
 
 <br>
 
-##### 3) 서버 에러 응답
+#### 3) 서버 에러 응답
 
 1. 500 Internal Server Error : `서버가 처리 방법을 모르는 상황이 발생했습니다. 서버는 아직 처리 방법을 알 수 없습니다.`
 
@@ -127,11 +127,11 @@ URL을 의미합니다. 이것은 API에서 종점은 적절하지만, 리소스
 <br>
 <br>
 
-### 4. Python
+### 6. Python
 ***
 * 20.08.31 피드백 : 함수명에는 return을 쓰지 말 것
 
-##### 1) 모듈
+#### 1) 모듈
 
 1. Module : `A file containing a set of functions you want to include in your application.`
 
@@ -156,7 +156,7 @@ URL을 의미합니다. 이것은 API에서 종점은 적절하지만, 리소스
     
 4. 환경변수 PYTHONPATH : `디렉토리 이동 및 설정 시`
     
-##### 2) 패키지
+#### 2) 패키지
 
 1. Package : `패키지(Packages)는 도트(.)를 사용하여 파이썬 모듈을 계층적(디렉터리 구조)으로 관리할 수 있게 해준다.
 예를 들어 모듈 이름이 A.B인 경우에 A는 패키지 이름이 되고 B는 A 패키지의 B모듈이 된다.`
@@ -180,3 +180,66 @@ URL을 의미합니다. 이것은 API에서 종점은 적절하지만, 리소스
 3. relative 패키지 : `한 모듈에서 다른 디렉토리의 모듈을 사용하고 싶을 때, import 해서 사용하면,
 전체 경로를 입력하지 않아도 편히 사용 가능`
 
+#### 3) 예외 처리
+
+- try, except : `except 여러개 가능`
+```
+try :
+
+except [발생오류[as 오류 메세지 변수]] :
+```
+ 
+- try, finally : `finally절은 try문 예외 발생 여부 상관없이 수행됨`
+```
+try :
+
+finally :
+    변수.close()
+```
+ 
+- 오류 회피하기
+```
+try :
+    
+except [발생오류] :
+    pass
+```
+
+- 오류 일부러 발생시키기
+```
+raise [발생오류]
+```
+
+- 예외 만들기
+```
+class Example(Exception) :
+파이썬 내장 클래스인 Exception 클래스를 상속하여 만들 수 있음.
+```
+
+#### 4) 라이브러리
+
+1. sys : `sys 모듈은 파이썬 인터프리터가 제공하는 변수와 함수를 직접 제어할 수 있게 해주는 모듈이다.`
+
+2. pickle : `pickle은 객체의 형태를 그대로 유지하면서 파일에 저장하고 불러올 수 있게 하는 모듈이다. `
+
+3. os : `OS 모듈은 환경 변수나 디렉터리, 파일 등의 OS 자원을 제어할 수 있게 해주는 모듈이다.`
+
+4. shutil : `shutil은 파일을 복사해 주는 파이썬 모듈이다.`
+
+5. glob : `가끔 파일을 읽고 쓰는 기능이 있는 프로그램을 만들다 보면 특정 디렉터리에 있는 파일 이름 모두를 알아야 할 때가 있다. 이럴 때 사용하는 모듈이 바로 glob이다.`
+
+6. tempfile : `파일을 임시로 만들어서 사용할 때 유용한 모듈이 바로 tempfile이다. `
+
+7. time : `시간과 관련된 time 모듈`
+
+8. calender : `calendar는 파이썬에서 달력을 볼 수 있게 해주는 모듈이다.`
+
+9. random : `random은 난수(규칙이 없는 임의의 수)를 발생시키는 모듈이다. `
+
+10. webbrowser : `webbrowser는 자신의 시스템에서 사용하는 기본 웹 브라우저를 자동으로 실행하는 모듈이다.`
+
+11. threading : `thread를 다루는 모듈`
+
+#### 5) PIP
+
+1. pip : `PyPI(Python Package Index) 저장소로부터 파이썬 패키지를 받아 설치하는 패키지 관리 도구`

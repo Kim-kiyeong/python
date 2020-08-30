@@ -1,5 +1,5 @@
 ### 1. Github 사용법
-
+***
 1. Github ? : `Github는 소프트웨어 개발 프로젝트를 위한 소스코드 관리 서비스`
 
 2. 사전지식
@@ -25,7 +25,7 @@
 <br>
 
 ### 2. Linux Command
-
+***
 ##### 1) File and Directory 관련
 
 1. ls : `List imformation about file`
@@ -49,7 +49,7 @@
 <br>
 
 ### 3. 올바르게 코드를 작성하는 방법
-
+***
 ##### 1) Camel Case
     > 첫 단어의 첫 글자만 소문자로 하고, 다음 단어부터 첫 글자는 대문자로
         ex ) markDown, camelCase
@@ -72,7 +72,7 @@
 <br>
 
 ### 4. SRP : Single Responsibility Principle
-
+***
 - 객체지향 설계의 5원칙 (SOLID) : SRP, OCP, LSP, ISP, DIP
     > 응집도는 높이고, 결합도는 낮추자는 고전 원칙을 객체 지향의 관점에서 재정립
 
@@ -91,7 +91,7 @@
 <br>
 
 ### 5. HTTP response status code
-
+***
 ##### 1) 성공 응답
 
 1. 200 OK : `요청이 성공적으로 되었습니다. 성공의 의미는 HTTP 메소드에 따라 달라집니다.`
@@ -127,4 +127,56 @@ URL을 의미합니다. 이것은 API에서 종점은 적절하지만, 리소스
 <br>
 <br>
 
-### 4.
+### 4. Python
+***
+* 20.08.31 피드백 : 함수명에는 return을 쓰지 말 것
+
+##### 1) 모듈
+
+1. Module : `A file containing a set of functions you want to include in your application.`
+
+2. 사용 법 : `확장자 .py로 만든 후 import로 불러와서 사용하면 됨`
+    - import [module]
+        - module.py에 담긴 모든 모듈을 사용
+        - 대신 module.method 형태로 사용해야함
+        - method 말고도 class나 변수도 가져올 수 있음
+    - from [module] import [method1], [method2] ...
+        - module.py 안의 특정 메소드만 가져와서 사용
+        - method 이름만 단독 사용 가능
+    - from [module] import *
+        - 전체 메소드 사용 가능
+
+3. module.py에 출력이 있는 경우 import 하는 순간 module의 결과값이 출력됨.
+    - 이 때 module.py 파일 안의 출력문에 if `__name__` == "`__main__`" : 사용
+        - 직접 .py을 실행할 경우엔 if문이 참이 되어 출력문이 실행
+            - `__name__` 안에 `__main__` 값이 저장 
+        - import를 한 경우엔 거짓이 되어 출력문이 실행되지 않음
+            - `__name__` 안에 모듈 이름 값 저장
+    - `__name__` 변수 : `파이썬 내부적으로 사용하는 메서드`
+    
+4. 환경변수 PYTHONPATH : `디렉토리 이동 및 설정 시`
+    
+##### 2) 패키지
+
+1. Package : `패키지(Packages)는 도트(.)를 사용하여 파이썬 모듈을 계층적(디렉터리 구조)으로 관리할 수 있게 해준다.
+예를 들어 모듈 이름이 A.B인 경우에 A는 패키지 이름이 되고 B는 A 패키지의 B모듈이 된다.`
+    > - 파이썬의 패키지는 디렉토리와 파이썬 모듈로 이루어진다.
+    
+    > 예시 1 ) import game.sound.echo
+       : game.sound.echo.echo_test()                    
+    > 
+    > 예시 2 ) from game.sound import echo
+       : echo.echo_test()
+    >
+    > 예시 3 ) from game.sound.echo import echo_test()
+       : echo_test()
+    >
+    > - import를 하기 위해선 모듈이 있는 디렉토리로 접근해줘야함
+    > - from이 아닌 import만 사용 시 마지막 항목은 반드시 모듈 또는 패키지여야 함.
+ 
+2. `__init__.py`의 용도 : `해당 디렉터리가 패키지의 일부임을 알려주는 역할을 한다.
+패키지에 포함된 디렉터리에 __init__.py 파일이 없다면 패키지로 인식되지 않는다.`
+
+3. relative 패키지 : `한 모듈에서 다른 디렉토리의 모듈을 사용하고 싶을 때, import 해서 사용하면,
+전체 경로를 입력하지 않아도 편히 사용 가능`
+
